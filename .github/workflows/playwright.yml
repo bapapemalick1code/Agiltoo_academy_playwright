@@ -1,0 +1,26 @@
+name: Tests avec Playwright
+on:
+  push:
+    branches:
+      - main
+jobs:
+  playwright-run:
+    runs-on: ubuntu-22.04
+    steps:
+      # Checkout the code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+      # Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+      # Install Playwright browsers
+      - name: Install Playwright browsers
+        run: npx playwright install
+      # Run Playwright tests
+      - name: Run Playwright tests
+        run: npx playwright test
