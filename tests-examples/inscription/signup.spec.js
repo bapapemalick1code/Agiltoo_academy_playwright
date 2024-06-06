@@ -1,7 +1,7 @@
 // Importation des modules nécessaires pour les tests Playwright
 const { test, expect } = require('@playwright/test');
 // Importation des données de test depuis le fichier fixtures/data_test.js
-const { newUser } = require('../../fixtures/data_test');
+const { newUser } = require('../../tests/fixtures/data_test');
 
 // Définition d'un test pour vérifier si un utilisateur peut s'inscrire avec des informations valides
 test('User can sign up with valid details', async ({ page }) => {
